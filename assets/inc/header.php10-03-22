@@ -1,0 +1,344 @@
+<?php
+
+// session_start();
+
+require_once("db/config.php");
+
+$database = new Database();
+$conn = $database->connect();
+
+require_once("ketex_admin/class/profile.php");
+$profile = new profile($conn);
+$allsearch1arr = $profile->allProfilelist();
+
+$publickey = "6LdYoqkeAAAAAMZxIy5pqmKcvIyvDl7J62B-SWpW"; // you got this from the signup page
+?>
+                                            
+
+
+
+
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+
+<style>
+:root {
+    --primaryColor: #ff6600;
+    --secondaryColor: #0185da;
+    --trirdColor: #efefef;
+    --textColor: #242424;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+<link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+<link rel="stylesheet" type="text/css" href="assets/scss/style.scss">
+
+<!------------GOOGLE FONT------------>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+<!------------ZMDI ICON------------>
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<!------------OWL------------>
+<link rel="stylesheet" href="assets/owl/owl3.css">
+<!------------AOS ANIMATION------------>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- ********|| HEADER START ||******** -->
+    <header class="header">
+        <div class="top-header">
+            <div class="container">
+                <div class="left-part">
+                    <div class="item-title">Welcome to Amer-Sil Ketex Private. Limited.</div>
+                </div>
+                <div class="social">
+                    <ul class="social-menu">
+                        <li><a href="#" class="fb"><i class="zmdi zmdi-facebook"></i></a></li>
+                        <li><a href="#" class="twitter"><i class="zmdi zmdi-twitter"></i></a></li>
+                        <li><a href="#" class="linkedin"><i class="zmdi zmdi-linkedin"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--
+    <div class="header-navigation">
+        <div class="container">
+            <div class="navigation">
+                
+                    <div class="brand">
+                        <a href="index.html" class="logo">
+                          <img class="img-fluid" src="assets/img/logo.jpg" alt="" title="Home">
+                      </a>
+                    </div>
+                  
+                <div class="responsive-action">
+                    <a href="javascript:void(0)" class="btn-menu"><i class="zmdi zmdi-menu"></i></a>
+                </div>
+-->
+        <!--
+                <div class="navigation-wrap">
+                    <ul class="navigation-menu">
+                        <li class="active"><a href="https://keylines.net.in/dev/ketex-html/" class="menu-link"><span>HOME</span></a></li>
+                        <li><a href="index.html" class="menu-link"><span>About Us </span></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="https://keylines.net.in/dev/ketex-html/product.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+        
+                            <a class="ser" href="https://keylines.net.in/dev/ketex-html/product.php">Products</a>
+                            <div class="dropdown-menu dropdown-style" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 44px, 0px);">
+                              <a class="dropdown-item" href="#">Pluri Tubular Bags (Gauntlets)</a>
+                              <a class="dropdown-item" href="#">Technical Textiles</a>
+                              <a class="dropdown-item" href="#">Fiberglass Fabrics</a>
+                              <a class="dropdown-item" href="#">Texturised Yarn, Ropes, Gasket</a>
+                              <a class="dropdown-item" href="#">Seperators</a>
+                              <a class="dropdown-item" href="#">Plastic Component</a>
+                            </div>
+                          </li>
+
+                          <li><a href="index.html" class="menu-link"><span>Developments</span></a></li>
+                          <li><a href="https://keylines.net.in/dev/ketex-html/application.php" class="menu-link"><span>Application</span></a></li>
+                          <li><a href="https://keylines.net.in/dev/ketex-html/contact_us.php" class="menu-link"><span>Contact Us</span></a></li>
+                          <li><a href="index.html" class="menu-link"><span>Notice Board</span></a></li>
+                    </ul>
+-->
+        <!--
+                </div>
+                <div class="hearder-options">
+                            <div class="user-options">
+                                <div class="search-icon">
+                                    <a href="javascript:void(0)" class="search-btn"><i class="zmdi zmdi-search"></i></a>
+                                </div>
+                                <div class="search-wrap">
+                                    <div class="search">
+                                        <div class="close-action">
+                                            <a href="javascript:void(0)" class="close-btn"><i class="zmdi zmdi-close"></i></a>
+                                        </div>
+                            <form action="#" class="search-input" method="get">
+      <input class="form-control" type="search" placeholder="Search" name="keyword" value="">
+      <button class="btn-search" type="submit">Search</button>
+    </form>
+    </div>
+                                </div>
+                </div>
+            </div>
+                
+                            </div>  
+                        </div>
+                    </div>
+                <div class="search-overlay"></div>
+                <div class="menu-overlay"></div>
+-->
+
+        <section class="topPanel">
+            <div class="container">
+                <div class="nav-inner">
+                    <div class="brand">
+                        <a href="http://localhost/ketex-html/" class="logo">
+                            <img class="img-fluid" src="assets/img/Ketex-logo-01.svg" alt="" title="Home">
+                        </a>
+                    </div>
+                    <div class="nav-info">
+                        <nav class="navbar navbar-expand-xl navbar-light">
+                            <!--
+              <a class="navbar-brand" href="<?php echo $database->base_url; ?>">
+                  <img src="<?php echo $database->base_url; ?>images/logo.svg" alt="" class="logo img-fluid">
+                </a>
+-->
+                            <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <!--                <span class="navbar-toggler-icon"></span>-->
+                                <i class="zmdi zmdi-menu"></i>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <div class="collapse navbar-collapse h-md-100" id="navbarSupportedContent">
+                                <ul class="navbar-nav m-auto text-uppercase h-md-100" id="nav">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $database->base_url; ?>">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $database->base_url; ?>about_us.php">About
+                                            Us</a>
+                                    </li>
+                                    <!--
+                    <li class="nav-item dropdown">
+                        <div class="box">
+                            
+                        </div>
+                            <a class="ser" href="https://keylines.net.in/dev/ketex-html/product.php"></a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Products</a>
+                        
+                            <div class="dropdown-menu dropdown-style" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 44px, 0px);">
+                              <a class="dropdown-item" href="#">Pluri Tubular Bags (Gauntlets)</a>
+                              <a class="dropdown-item" href="#">Technical Textiles</a>
+                              <a class="dropdown-item" href="#">Fiberglass Fabrics</a>
+                              <a class="dropdown-item" href="#">Texturised Yarn, Ropes, Gasket</a>
+                              <a class="dropdown-item" href="#">Seperators</a>
+                              <a class="dropdown-item" href="#">Plastic Component</a>
+                            </div>
+                          </li>
+-->
+
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                            href="<?php echo $database->base_url; ?>product_listing.php" id="navbarDropdown"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                            Products
+                                        </a>
+                                        <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div> -->
+
+                                        <ul class="dropdown-menu" aria-labelledby="seviceDropdownLink">
+
+                                            <?php foreach ($allsearch1arr as $k => $v): ?>
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item"
+                                                    href="<?php echo $database->base_url; ?>product_listing.php?ID=<?php echo $v['cat_id'] ?>"><?php echo $v['cat_name'] ?></a>
+                                            </li>
+                                            <?php
+                                endforeach;
+                            ?>
+                                            <!-- <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Technical Textiles</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Fiberglass Fabrics</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Texturised Yarn, Ropes, Gasket</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" href="#">Plastic Component</a>
+                            </li> -->
+
+                                            <!-- <li><a class="dropdown-item" href="highway-services.html">Highway</a></li> -->
+                                        </ul>
+
+
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                            href="<?php echo $database->base_url; ?>development.php">Developments</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link"
+                                            href="<?php echo $database->base_url; ?>application.php">Application</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $database->base_url; ?>contact_us.php">Contact
+                                            Us</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="<?php echo $database->base_url; ?>notice_board.php">Notice
+                                            Board</a>
+                                    </li>
+                                </ul>
+
+                            </div>
+                        </nav>
+                        <div class="hearder-options">
+                            <div class="user-options">
+                                <div class="search-icon">
+                                    <a href="javascript:void(0)" class="search-btn"><i class="zmdi zmdi-search"></i></a>
+                                </div>
+                                <div class="search-wrap">
+                                    <div class="search">
+                                        <div class="close-action">
+                                            <a href="javascript:void(0)" class="close-btn"><i
+                                                    class="zmdi zmdi-close"></i></a>
+                                        </div>
+                                        <form action="db_search_query.php" class="search-input" method="post">
+                                            <input class="form-control" type="search" placeholder="Search"
+                                                name="keyword" value="" id="myInput" required>
+                                            <button class="btn-search" type="submit">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </header>
+    <!-- ********|| HEADER ENDS ||******** -->
+
+    <!-- ********|| NAV STARTS ||******** -->
+    <!--
+      <section class="topPanel">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-xl navbar-light">
+              <a class="navbar-brand" href="<?php echo $database->base_url; ?>">
+                  <img src="<?php echo $database->base_url; ?>images/logo.svg" alt="" class="logo img-fluid">
+                </a>
+              <button class="navbar-toggler x collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                  <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+              </button>
+
+              <div class="collapse navbar-collapse h-md-100" id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto text-uppercase h-md-100" id="nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://keylines.net.in/dev/ketex-html/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About Us</a>
+                  </li>
+                    <li class="nav-item dropdown">
+        
+                            <a class="ser" href="https://keylines.net.in/dev/ketex-html/product.php">Products</a>
+                        <a class="nav-link dropdown-toggle" href="https://keylines.net.in/dev/ketex-html/product.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                        
+                            <div class="dropdown-menu dropdown-style" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 44px, 0px);">
+                              <a class="dropdown-item" href="#">Pluri Tubular Bags (Gauntlets)</a>
+                              <a class="dropdown-item" href="#">Technical Textiles</a>
+                              <a class="dropdown-item" href="#">Fiberglass Fabrics</a>
+                              <a class="dropdown-item" href="#">Texturised Yarn, Ropes, Gasket</a>
+                              <a class="dropdown-item" href="#">Seperators</a>
+                              <a class="dropdown-item" href="#">Plastic Component</a>
+                            </div>
+                          </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Developments</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://keylines.net.in/dev/ketex-html/application.php">Application</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="https://keylines.net.in/dev/ketex-html/contact_us.php">Contact Us</a>
+                  </li>
+                   <li class="nav-item">
+                    <a class="nav-link" href="#">Notice Board</a>
+                  </li> 
+                </ul>
+                 
+              </div>
+            </nav>
+
+        </div>
+    </div>
+</section>
+-->
+    <!-- ********|| NAV ENDS ||******** -->
